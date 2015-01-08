@@ -23,7 +23,7 @@
 
 - (void)gestureHandler:(UIPanGestureRecognizer*)recognizer{
     CGPoint location = [recognizer locationInView:[_modalController.view window]];
-    CGPoint velocity = [recognizer velocityInView:[_modalController.view window]];
+//    CGPoint velocity = [recognizer velocityInView:[_modalController.view window]];
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         if (location.y < CGRectGetMidY(recognizer.view.bounds)) {
@@ -31,7 +31,7 @@
         }
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
         CGFloat animationRatio = location.y / CGRectGetHeight(_modalController.view.bounds);
-        NSLog(@"animationRatio : %f  location : %f  velocity : %f", animationRatio, location.y, velocity.y);
+//        NSLog(@"animationRatio : %f  location : %f  velocity : %f", animationRatio, location.y, velocity.y);
         [self updateInteractiveTransition:animationRatio];
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
         if (location.y > CGRectGetHeight(_modalController.view.bounds) / 2) {
@@ -39,6 +39,7 @@
         } else {
             [self cancelInteractiveTransition];
         }
+        _modalController = nil;
     }
 }
 
@@ -58,11 +59,8 @@
                              CGRect frame = fromVC.view.frame;
                              frame.origin.y = CGRectGetMaxY([UIScreen mainScreen].bounds);
                              fromVC.view.frame = frame;
-                             
                          } completion:^(BOOL finished) {
                              [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-                             _modalController = nil;
-                             
                          }];
     
 }

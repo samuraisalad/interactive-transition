@@ -18,11 +18,14 @@
 @implementation SecondViewController
 
 - (void)viewDidLoad {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"viewWillAppear");
+    
     [super viewWillAppear:animated];
     
     _transitionManager = [[TransitionManager alloc] init];
