@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()
 
@@ -17,11 +18,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+//    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+//    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+//    }
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)showButtonAction:(id)sender {
+    [self performSegueWithIdentifier:@"showSegue" sender:self];
 }
 
 @end

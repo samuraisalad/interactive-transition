@@ -14,6 +14,8 @@
 		C3B9B4701A49418A0033796D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B9B46F1A49418A0033796D /* Images.xcassets */; };
 		C3B9B4731A49418A0033796D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B9B4711A49418A0033796D /* LaunchScreen.xib */; };
 		C3B9B47F1A49418A0033796D /* interactive_transitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B9B47E1A49418A0033796D /* interactive_transitionTests.m */; };
+		C3B9B48A1A4943930033796D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B9B4891A4943930033796D /* SecondViewController.m */; };
+		C3ECEA0D1A5EDB0F00610272 /* TransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3ECEA0C1A5EDB0F00610272 /* TransitionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		C3B9B4781A49418A0033796D /* interactive-transitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "interactive-transitionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B9B47D1A49418A0033796D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3B9B47E1A49418A0033796D /* interactive_transitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interactive_transitionTests.m; sourceTree = "<group>"; };
+		C3B9B4881A4943930033796D /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C3B9B4891A4943930033796D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C3ECEA0B1A5EDB0F00610272 /* TransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionManager.h; sourceTree = "<group>"; };
+		C3ECEA0C1A5EDB0F00610272 /* TransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +91,14 @@
 				C3B9B4671A49418A0033796D /* AppDelegate.m */,
 				C3B9B4691A49418A0033796D /* ViewController.h */,
 				C3B9B46A1A49418A0033796D /* ViewController.m */,
+				C3B9B4881A4943930033796D /* SecondViewController.h */,
+				C3B9B4891A4943930033796D /* SecondViewController.m */,
 				C3B9B46C1A49418A0033796D /* Main.storyboard */,
 				C3B9B46F1A49418A0033796D /* Images.xcassets */,
 				C3B9B4711A49418A0033796D /* LaunchScreen.xib */,
 				C3B9B4621A49418A0033796D /* Supporting Files */,
+				C3ECEA0B1A5EDB0F00610272 /* TransitionManager.h */,
+				C3ECEA0C1A5EDB0F00610272 /* TransitionManager.m */,
 			);
 			path = "interactive-transition";
 			sourceTree = "<group>";
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B9B48A1A4943930033796D /* SecondViewController.m in Sources */,
 				C3B9B46B1A49418A0033796D /* ViewController.m in Sources */,
 				C3B9B4681A49418A0033796D /* AppDelegate.m in Sources */,
 				C3B9B4651A49418A0033796D /* main.m in Sources */,
+				C3ECEA0D1A5EDB0F00610272 /* TransitionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +424,7 @@
 				C3B9B4841A49418A0033796D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3B9B4851A49418A0033796D /* Build configuration list for PBXNativeTarget "interactive-transitionTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				C3B9B4871A49418A0033796D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
