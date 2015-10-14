@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NPn-ac-8Mq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NPn-ac-8Mq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RH1-kP-Esk">
                                 <rect key="frame" x="282" y="113" width="37" height="30"/>
+                                <animations/>
                                 <state key="normal" title="show">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,6 +29,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="RH1-kP-Esk" secondAttribute="centerX" id="p11-wX-x3U"/>
@@ -34,9 +37,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5TL-v1-oBk"/>
-                    <connections>
-                        <segue destination="dbQ-HX-zV5" kind="presentation" identifier="showSegue" id="JmD-zU-wWE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40o-hi-YlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,22 +54,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3G-Iy-ClR">
-                                <rect key="frame" x="280" y="116" width="40" height="30"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sW0-U0-IvO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3G-Iy-ClR">
+                                        <rect key="frame" x="280" y="285" width="40" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeButtonAction:" destination="dbQ-HX-zV5" eventType="touchUpInside" id="Uca-pc-7tw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EM-bM-9mi" userLabel="Open">
+                                        <rect key="frame" x="280" y="237" width="40" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Open">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openButtonAction:" destination="dbQ-HX-zV5" eventType="touchUpInside" id="pzF-Lb-0F0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="テストラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W70-0x-uxZ">
+                                        <rect key="frame" x="248" y="700" width="172" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
                                 <connections>
-                                    <action selector="closeButtonAction:" destination="dbQ-HX-zV5" eventType="touchUpInside" id="Uca-pc-7tw"/>
+                                    <outlet property="delegate" destination="dbQ-HX-zV5" id="d80-Yd-Gfp"/>
                                 </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.83921568629999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="b3G-Iy-ClR" firstAttribute="top" secondItem="XNj-Xf-RYN" secondAttribute="bottom" constant="96" id="gCF-gZ-uHJ"/>
-                            <constraint firstAttribute="centerX" secondItem="b3G-Iy-ClR" secondAttribute="centerX" id="hAg-Bx-d1b"/>
+                            <constraint firstItem="fpD-jz-Giq" firstAttribute="top" secondItem="sW0-U0-IvO" secondAttribute="bottom" id="C0l-vE-Gor"/>
+                            <constraint firstItem="sW0-U0-IvO" firstAttribute="leading" secondItem="4H1-ad-ddn" secondAttribute="leading" id="GTu-nA-1dB"/>
+                            <constraint firstItem="sW0-U0-IvO" firstAttribute="top" secondItem="4H1-ad-ddn" secondAttribute="top" id="VJq-tj-PWW"/>
+                            <constraint firstAttribute="trailing" secondItem="sW0-U0-IvO" secondAttribute="trailing" id="X63-V8-Yds"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="sW0-U0-IvO" id="72x-0k-c1O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLs-aA-D5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import "TransitionManager.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -53,7 +53,8 @@
 }
 
 - (IBAction)showButtonAction:(id)sender {
-    [self performSegueWithIdentifier:@"showSegue" sender:self];
+    SecondViewController *secondViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"SecondViewController"];
+    [self presentViewController:secondViewController animated:YES completion:nil];
 }
 
 @end
