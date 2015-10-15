@@ -11,6 +11,7 @@
 
 @interface TransitionManager () <UIGestureRecognizerDelegate>
 
+@property (nonatomic, strong) id <UIViewControllerContextTransitioning> transitionContext;
 @property (nonatomic, weak) UIScrollView *scrollView;
 @property (nonatomic, weak) UIViewController *fromViewController;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
@@ -209,6 +210,7 @@
                          [self.transitionContext cancelInteractiveTransition];
                          [self.transitionContext completeTransition:NO];
                          self.transitionContext=nil;
+                         self.scrollView.scrollEnabled = YES;
                      }];
     
     

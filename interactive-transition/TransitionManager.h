@@ -11,13 +11,9 @@
 
 @class SecondViewController;
 @interface TransitionManager : UIPercentDrivenInteractiveTransition <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning>
-@property (nonatomic, readwrite) id <UIViewControllerContextTransitioning> transitionContext;
 
 @property (nonatomic, assign) BOOL isNoNeedInteractive;
 
 - (id)initWithFromViewController:(UIViewController*)fromViewController withScrollView:(UIScrollView*)scrollView;
-
-- (void)cancelInteractiveTransitionWithDuration:(CGFloat)duration;
-- (void)finishInteractiveTransitionWithDuration:(CGFloat)duration;
 
 @end
